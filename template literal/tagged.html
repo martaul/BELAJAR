@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h1{
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //tagged templates
+        // bisa buat ngerubah / nyambungin function
+        // const nama = 'marta';
+        // const umur = 22;
+
+        // function coba (strings, ...values){
+        //     // let result = '';
+        //     // strings.forEach((str, i) => {
+        //     //     result += `${str}${values[i] || ''}`;
+
+        //     // });
+        //     // return result;
+
+        //     //pake reduce
+        //     return strings.reduce((result, str, i) => `${result}${str}${values[i] || ''}`, '');
+        // }
+        // const str = coba `halo, nama saya ${nama}, saya ${umur} tahun.`;
+        // console.log(str);
+
+        //highligt
+        const nama = 'marta';
+        const umur = 22;
+        const email ='marta@gmail.com'
+
+        function highlight(strings, ...values) {
+            return strings.reduce((result, str, i) => `${result}${str}
+            <span class = "h1">
+                ${values[i] || ''}
+            </span>`, '');
+        }
+        const str = highlight `Halo, nama saya ${nama}, saya ${umur} tahun, email saya ${email}`;
+
+        document.body.innerHTML = str;
+
+
+    </script>
+</body>
+</html>

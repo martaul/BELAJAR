@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let ditepati = true;
+        // const janji2 = new Promise((resolve, reject) => {
+        //     if (ditepati){
+        //         setTimeout(() =>{
+        //             resolve('Ditepati setelah beberapa waktu!');
+        //         }, 2000);
+        //     } else {
+        //         setTimeout(() =>{
+        //             resolve ('tidak ditepati setelah beberapa waktu');
+        //         }, 2000);
+        //     }
+        // });
+        // console.log('mulai');
+        // janji2
+        // .then(response => console.log ('OK :' + response))
+        // .catch(response => console.log ('NOT OK :' + response));
+        // console.log('selesai');
+
+        //promise pake all
+        const film = new Promise (resolve =>{
+            setTimeout(() =>{
+                resolve ([{
+                    judul : 'avangers',
+                    sutradara : 'marta',
+                    pemeran : 'doddy'
+                }])
+            }, 1000);
+        })
+        const cuaca = new Promise (resolve =>{
+            setTimeout(() =>{
+                resolve ([{
+                    kota : 'bandung',
+                    temp : 26,
+                    kondisi : 'cerah berawan'
+                }])
+            }, 500);
+        })
+        Promise.all([film, cuaca])
+        .then (response => {
+            const [film, cuaca] = response ;
+            console.log (film);
+            console.log(cuaca);
+        })
+    </script>
+</body>
+</html>

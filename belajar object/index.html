@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // object literal
+        // let mahasiswa = {
+        //     nama : 'marta',
+        //     energi : 10,
+        //     makan : function (porsi) {
+        //         this.energi = this.energi + porsi;
+        //         console.log (`selamat datan ${this.nama}, selamat makan!`);
+        //     }
+        // }
+        
+        //function literal
+        // function Mahasiswa(nama, energi) {
+        //     let mahasiswa = {};
+        //     mahasiswa.nama = nama;
+        //     mahasiswa.energi = energi;
+            
+        //     mahasiswa.makan = function (porsi){
+        //         this.energi += porsi;
+        //         console.log (`selamat datan ${this.nama}, selamat makan!`);
+        //     }
+        //     return mahasiswa;
+        // }
+        // let marta = Mahasiswa ('marta', 10);
+        
+        // object_create
+        // const methodMahasiswa = {
+        //     makan : function (porsi){
+        //     this.energi += porsi;
+        //     console.log (`selamat datan ${this.nama}, selamat makan!`);
+        //     }
+        // }
+    
+        // function Mahasiswa(nama, energi) {
+        //     let mahasiswa = Object.create(methodMahasiswa);
+        //     mahasiswa.nama = nama;
+        //     mahasiswa.energi = energi;
+
+        //     return mahasiswa;
+        // }
+        // let marta = Mahasiswa ('marta', 10);
+        
+        //pake class
+        // class Mahasiswa {
+        //     constructor(nama, energi) {
+        //         this.nama = nama;
+        //         this.energi = energi;
+        //     }
+        //     makan(porsi){
+        //         this.energi += porsi;
+        //         console.log (`selamat datan ${this.nama}, selamat makan!`);
+        //     }
+        // }
+
+        // let marta = new Mahasiswa ('marta',10);
+
+
+        //closure sebagai factory function
+        // function ucapkanSalam(waktu) {
+        //     return function (nama) {
+        //         console.log(`halo ${nama}, selamat ${waktu}, semoga harimu menyenangkan!`)
+        //     }
+        // }
+        // let selamatPagi = ucapkanSalam('pagi');
+        // let selamatSiang = ucapkanSalam('siang');
+        // let selamatMalam = ucapkanSalam('malam');
+        
+        // selamatPagi('marta');
+
+        // closure sebagai private method
+        // let add = (function (){ //pake closure biar g keusik objectnya kalo dinotice object luar
+        //     let counter = 0;
+        //     return function () { //dibikin function biar hasil nambah
+        //         return ++counter;
+        //     }
+        // }) (); //sibol kurung petik biar hasilnya keluar tanbah bikin variabel
+
+        // console.log(add());
+        // console.log(add());
+        
+        // pake arrow function
+        // let mahasiswa = ['marta', 'ulina'];
+
+        // // let jumlahHuruf = mahasiswa.map(nama =>mahasiswa.length)
+        // // console.log(jumlahHuruf);
+
+        // let jumlahHuruf = mahasiswa.map(nama => ({nama: nama, jmlHuruf: nama.length}));
+        // console.table(jumlahHuruf);
+
+    </script>
+</body>
+</html>

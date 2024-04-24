@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const perkenalan = ['halo', 'saya', 'marta'];
+
+        // const [salam, satu , dua]= perkenalan;
+        // console.log(dua);
+
+        //bsa buat tuker variabel
+        // let a = 5;
+        // let b = 1;
+        // console.log(a);
+        // console.log(b);
+        // [a, b] = [b, a];
+        // console.log(a);
+        // console.log(b);
+
+        // rest parameter w destructing
+        // const [a, ...values] = [ 1, 2, 3, 4, 5];
+        // console.log(values);
+
+        //assignment tanpa deklarasi object
+        // ({nama, umur} = { nama : 'marta', umur :22});
+        // console.log(nama);
+
+        //memberikan value jka ada properti dideklarasi g ada dioject
+        // const mhs = {
+        //     nama : 'marta',
+        //     umur : 22
+        // }
+
+        // const {nama, umur, email = 'default@mhs.com'} = mhs;
+        // console.log(mhs)
+
+        // buat gambil satu object field aja tpi di di destructing dulu
+        // const mhs = {
+        //     id: 21,
+        //     nama : 'marta',
+        //     umur : 22,
+        //     email : 'marta@gmail.com'
+        // }
+        // function getIdMhs({id}){
+        //     return id;
+        // }
+        // console.log(getIdMhs(mhs))
+        
+        //destructing function
+        // function penjumlahanPerkalian(a, b){
+        //     return [a + b, a * b];
+        // }
+        // const [jumlah, kali] = penjumlahanPerkalian(2, 3);
+        // console.log (jumlah);
+
+        //kalo destructing tanpa liat urutan
+        // function kalkulasi (a,b) {
+        //     return {
+        //         tambah : a+b,
+        //         kurang : a-b,
+        //         kali : a*b
+        //     }
+        // }
+        // const { kali , tambah, kurang} = kalkulasi (5,3);
+        // console.log (kurang)
+
+        // destructing kompleks
+        // const mhs1 = {
+        //     nama : 'marta',
+        //     umur : 22,
+        //     email :'marta@gmail.com',
+        //     nilai : {
+        //         tugas : 80,
+        //         uts : 70,
+        //         uas : 90
+        //     }
+        // }
+        // function cetakMhs ({nama, umur, nilai : {tugas, uts, uas}}){
+        //     return `halo, nama saya ${nama}, saya berumur ${umur} tahun,
+        //     dan nilai uas saya adalah ${uas}`;
+        // }
+        // console.log(cetakMhs(mhs1));
+
+        // destrucing pake rest parmeter
+        const kelompok1 = ['marta', 'ulina', 'simanungkalit']
+        const [ketua, ...anggota] = kelompok1;
+        console.log(anggota)
+
+        //bsa buat ngelompokin properti object
+        const team ={
+            pm : 'marta',
+            fe : 'ulina',
+            ui : 'simanungkalit'
+        }
+        const {pm,...myTeam} = team;
+        console.log(myTeam);
+    </script>
+</body>
+</html>

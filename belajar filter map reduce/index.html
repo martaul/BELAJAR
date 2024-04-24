@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-duration = "12:57"> Teknik Podomoro</li>
+        <li data-duration = "13:07"> JAVASCRIPT LANJUTAN</li>
+        <li data-duration = "12:00"> JAVASCRIPT LANJUTAN</li>
+        <li data-duration = "8:00"> JwEBSITE PENIPU</li>
+    </ul>
+    <h1> My playlist </h1>
+    <ol>
+        <li>
+            <h4>JAVASCRIPT LANJUTAN</h4>
+            <p>jumlah video : <span class="jumlah-video"></span></p>
+            <p>total durasi : <span class="total-durasi"></span></p>
+        </li>
+    </ol>
+    <script>
+        // const angka =[5, 1, 9 , 4];
+
+        // //filter
+        // const newAngka = angka.filter(a => a >= 3);
+        // //map
+        // const newAngka = angka.map(a => a*3);
+        // console.log(newAngka);
+        //reduce
+        // const newAngka = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 5);
+        // console.log(newAngka)
+        //chaining
+        // mw angka lbh dri 3 dikali 2 terus ditambahin
+        // const hasil = angka.filter(a => a >= 3) // 5,9,4
+        // .map (a => a*2) // 10,18,8
+        // .reduce((acc, cur) => acc + cur); // 36
+        // console.log(hasil);
+        
+        //ambil semua video jdi array
+        let videos = Array.from(document.querySelectorAll('[data-duration]'));
+
+        // pilih JAVASCRIPT LANJUTAN
+        let jsLanjutan = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN'))
+
+        //ambil durasi video
+        .map(item => item.dataset.duration)
+
+        //ubah durasi jdi menit
+        .map(waktu => {
+        //10:20 -> [10, 20] split
+        let parts =waktu.split(':').map(part => parseFloat(part));
+        return(parts[0] *60) + parts[1];  
+        })
+         //jmlh semua detik
+        .reduce((total, detik) => total * detik);
+
+        //ubh formatnya jdi menit waktu detik
+        const jam = Math.floor(jsLanjutan / 3600);
+        jsLanjutan = jsLanjutan - jam *3600; //jdiin jam
+        const menit = Math.floor(jsLanjutan / 60);
+        const detik = jsLanjutan - menit * 60;
+
+        //simpan di DOM
+         const pDurasi = document.querySelector('.total-durasi');
+         pDurasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} Detik.`;
+         const jmlVideo = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN')).length;
+         const pjmlVideo =  document.querySelector('.jumlah-video');
+         pjmlVideo.textContent = `${jmlVideo} video.`;
+        
+    </script>
+</body>
+</html>
